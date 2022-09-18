@@ -1,0 +1,37 @@
+{
+  "id": "4da423ac-c8e2-4c1b-be57-57e53a4834a5",
+  "data_points": [
+    {
+      "label": "foo",
+      "value": 100,
+      "comments": []
+    },
+    {
+      "label": "bar",
+      "value": 200,
+      "comments": [
+        {
+          "author": "Alfa",
+          "id": "bd86b1bb-dac8-4419-a749-1595daa4d9bd",
+          "text": "Comment 1"
+        },
+        {
+          "author": "Bravo",
+          "id": "b80f9839-706f-43e9-8e70-5c9b78f4262c",
+          "text": "Comment 2"
+        }
+      ]
+    },
+    {
+      "label": "baz",
+      "value": 300,
+      "comments": [
+        {
+          "author": "Charlie",
+          "id": "28ef9545-8882-40d9-a421-841ac89b5d8e",
+          "text": "Comment 3"
+        }
+      ]
+    }
+  ]
+}
