@@ -1,0 +1,58 @@
+tasks:
+  app:run-dev:
+    usage: Run app in development mode
+    run:
+      - set-environment:
+          BACKEND_ENV: dev
+      - uvicorn src.main:app --reload
+
+  dependencies:compile:
+    usage: Compile dependencies using pip-tools (https://github.com/jazzband/pip-tools).
+    run:
+      - python -m pip install pip-tools
+      - pip-compile
+        --upgrade
+        --generate-hashes
+        --allow-unsafe
+        --quiet
+        --output-file requirements/dev.txt
+        requirements/dev.in
+
+  dependencies:list-outdated:
+    run: python -m pip list --outdated
+
+  dependencies:sync-dev:
+    usage: Synchronise dependencies i.e. delete OLD, update EXISTING & install NEW.
+    run:
+      - python -m pip install pip-tools
+      - pip-sync requirements/dev.txt
+
+  linters:run-all:
+    usage: Lint source code using Isort, Black, Flake8 and Bandit.
+    run:
+      - python -m isort . --quiet
+      - black --line-length=100 --exclude=venv .
+      - python -m flake8
+      - bandit --recursive --exclude=/venv,/tests/ .
+
+  tests:run:
+    usage: Run pytest with coverage report.
+    options:
+      test-files-and-dirs:
+        usage: "Default: tests/"
+        default: tests/
+    run:
+      command:
+        print: "Running tests..."
+        exec: |
+          set -e  # Exit immediately if a command returns a non-zero status
+
+          args=()
+
+          if [ ${test-files-and-dirs} = "tests/" ]; then
+              args+=(--cov=src)
+              args+=(--cov-branch)
+          fi
+
+          set -x  # Print commands
+          python -m pytest ${args[@]} ${test-files-and-dirs}

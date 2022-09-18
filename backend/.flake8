@@ -1,0 +1,83 @@
+[flake8]
+
+docstring-quotes = double
+inline-quotes = double
+multiline-quotes = double
+
+ignore =
+    # C408: Unnecessary (dict/list/tuple) call - rewrite as a literal
+    #
+    # Calling directly dict/list/tuple is more obvious & explicit, making it
+    # easier to read.
+    C408,
+
+    # C812 missing trailing comma
+    # C813 missing trailing comma in Python 3
+    # C815 missing trailing comma in Python 3.5+
+    #
+    # Black takes care of it.
+    C812, C813, C815,
+
+    # D10X: missing docstring in public methods
+    #
+    # More often than not docstrings are unnecessary, especially with
+    # descriptive name followed by self-documenting signature embellished
+    # with type hints.
+    D100, D101, D102, D103, D104, D105, D106, D107,
+
+    # D200 One-line docstring should fit on one line with quotes
+    #
+    # It should be judged case-by-case. One-liners can, and often do, result in
+    # a concise but cramped block of code.
+    D200,
+
+    # D205: 1 blank line required between summary line and description
+    # D400: First line should end with a period
+    # D401: First line should be in imperative mood; try rephrasing
+    #
+    # We should be more pragmatic regarding docstrings.
+    D205, D400, D401,
+
+    # E203 whitespace before ':'
+    #
+    # Black takes care of it.
+    E203,
+
+    # E241: multiple spaces after ','
+    #
+    # Black takes care of it.
+    E241,
+
+    # E402: module level import not at top of file
+    #
+    # Black takes care of it.
+    E402,
+
+    # E501: line too long
+    #
+    # Black takes care of it.
+    E501,
+
+    # W503: line break before binary operator
+    #
+    # Arbitrary preference to break before the operator, as it makes easy to
+    # match operators with operands.
+    # See: https://github.com/PyCQA/pycodestyle/issues/197#issuecomment-219742628
+    W503
+
+exclude = venv
+
+per-file-ignores =
+  ci/ci_checks.py: T201
+  src/domain/objects/__init__.py: F401
+  src/domain/services/__init__.py: F401
+  src/repos/__init__.py: F401
+  src/router.py: B008
+  tests/conftest.py: F401, F403
+
+# McCabe Cyclomatic Complexity
+max_complexity = 7
+
+doctests = True
+show-source = True
+statistics = True
