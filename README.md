@@ -1,13 +1,13 @@
 # Chart Comments
 
-+ Chart Comments is a simple example of a web application that 
-  displays a chart that users can comment on.
++ Chart Comments is a simple a web application that displays a chart that users 
+  can comment on.
 
 + This project is intended to be used as a starting point for building 
   a more complex application.
 
-+ As a bonus, the code can be used as a template for building any other 
-  React + FastAPI web application.
++ As a bonus, the code can be used as a template for building
+  a React + FastAPI web application.
 
 ## How to run the project?
 
