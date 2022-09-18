@@ -1,6 +1,6 @@
 # Chart Comments
 
-+ Chart Comments is a simple a web application that displays a chart that users 
++ Chart Comments is a simple web application that displays a chart that users 
   can comment on.
 
 + This project is intended to be used as a starting point for building 
@@ -46,7 +46,7 @@
     tusk dependencies:sync-dev
     tusk app:run-dev
     ```
-  + It is recommended to manage local Python version via
+  + It is recommended to manage the local Python version via
     [asdf](https://asdf-vm.com/guide/getting-started.html). Once you have it, 
     run `asdf install python 3.9.13` to ensure that Python's venv
     has access to the required Python version.
