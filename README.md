@@ -46,9 +46,17 @@
     tusk dependencies:sync-dev
     tusk app:run-dev
     ```
+  + It is recommended to manage local Python version via
+    [asdf](https://asdf-vm.com/guide/getting-started.html). Once you have it, 
+    run `asdf install python 3.9.13` to ensure that Python's venv
+    has access to the required Python version.
+
 + Run `tusk linters:run-all` to lint the Back End codebase.
 
 + Run `tusk tests:run` to run the Back End tests.
+
++ The Back End state (chart data, comments, etc.) is reset on the restart
+  of the Back End app.
 
 ## Project Requirements
 
