@@ -41,8 +41,8 @@
 
     ```shell
     cd backend
-    python -m venv
-    source venv/bin/active
+    python -m venv venv
+    source venv/bin/activate
     tusk dependencies:sync-dev
     tusk app:run-dev
     ```
