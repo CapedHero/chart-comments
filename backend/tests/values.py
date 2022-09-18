@@ -1,0 +1,4 @@
+TEST_COMMENT_AUTHOR = "Test Author"
+TEST_COMMENT_TEXT = "Comment Text"
+TEST_DATA_POINT_LABEL = "foo"
+TEST_UUID = "fc9e0b8c-b69e-4df7-897e-f1ff4634fad1"
