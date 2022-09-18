@@ -1,18 +1,57 @@
 # Chart Comments
 
-+ This project is a simple example of a web application that displays a chart
-  that users can comment on.
++ Chart Comments is a simple example of a web application that 
+  displays a chart that users can comment on.
 
-+ Chart Comments are intended to be used as a starting point for building a 
-  more complex application.
++ This project is intended to be used as a starting point for building 
+  a more complex application.
 
 + As a bonus, the code can be used as a template for building any other 
   React + FastAPI web application.
 
-## Requirements
+## How to run the project?
+
++ Start both Front End and Back End apps (see the instructions below).
+
++ Open your browser and go to http://localhost:3000.
+
++ Voilà! Now you can enjoy the app.
+
+### Front End
+
++ Front End is managed via `yarn`.
+
++ To start the Front End app:
+
+  ```shell
+  cd frontend
+  yarn install
+  yarn start
+  ```
+
++ Run `yarn lint` to lint the Front End codebase.
+
+### Back End
+
++ Back End is managed via [tusk](https://github.com/rliebz/tusk).
+
+  + [tusk installation instructions](https://github.com/rliebz/tusk#installation)
+
++ To start the Back End app:
+
+    ```shell
+    cd backend
+    tusk dependencies:sync-dev
+    tusk app:run-dev
+    ```
++ Run `tusk linters:run-all` to lint the Back End codebase.
+
++ Run `tusk tests:run` to run the Back End tests.
+
+## Project Requirements
 
 + [x] Choose a single chart type you would like to work with.
-  + Chosen option: bar chart
+  + Chosen chart type: bar chart
 
 + [x] Display the chart on the frontend using a library of your choice.
   + Chosen chart library: [d3](https://github.com/d3/d3)
@@ -23,7 +62,7 @@
 
 + [x] The comment add form should have username and comment fields.
 
-## Technical Constraints & Guidelines
+## Project Technical Constraints & Guidelines
 
 + [x] Python + FastAPI for the backend.
 
