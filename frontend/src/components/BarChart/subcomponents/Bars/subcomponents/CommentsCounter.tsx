@@ -23,7 +23,7 @@ function CommentsCounter(props: CommentsCounterProps) {
         <text
           x={axisXScale(dataPoint.x)! + axisXScale.bandwidth() - 3}
           y={axisYScale(dataPoint.y) + 3}
-          className="fill-white text-xs"
+          className="select-none fill-white text-xs"
           textAnchor="middle"
           dy="0.35em"
         >
